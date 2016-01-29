@@ -2,7 +2,6 @@ package goutils
 
 import (
 	"bytes"
-	"fmt"
 	"strings"
 )
 
@@ -31,18 +30,14 @@ func (su StringUtils) LeftPad(s string, size int, pad string) string {
 		return s
 	}
 	if padLen == 1 && pads <= PadLimit {
-		fmt.Println("'1.'")
 		return strings.Repeat(pad, pads) + s
 	}
 
 	if pads == padLen {
-		fmt.Println("'2.'")
 		return pad + s
 	} else if pads < padLen {
-		fmt.Println("'3.'")
 		return pad[0:pads] + s
 	} else {
-		fmt.Println("'4.'")
 		var buffer bytes.Buffer
 
 		for i := 0; i < pads; i++ {
