@@ -14,6 +14,22 @@ func (au ArrayUtils) Reverse(array []byte) []byte {
 	return array
 }
 
+// IndexOfString 用來尋找 array 變數的索引值
+func (au ArrayUtils) IndexOfString(array []string, valueToFind string, startIndex int) int {
+	if len(array) == 0 {
+		return indexNotFound
+	}
+	if startIndex < 0 {
+		startIndex = 0
+	}
+	for i := startIndex; i < len(array); i++ {
+		if valueToFind == array[i] {
+			return i
+		}
+	}
+	return indexNotFound
+}
+
 // IndexOfUint 用來尋找 array 變數的索引值
 func (au ArrayUtils) IndexOfUint(array []uint, valueToFind uint, startIndex int) int {
 	if len(array) == 0 {
